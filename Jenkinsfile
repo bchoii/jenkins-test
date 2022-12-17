@@ -15,11 +15,6 @@ pipeline {
                 '''
             }
         }
-        stage('Test') {
-            steps {
-                sh 'echo "Fail!"; exit 1'
-            }
-        }
         stage('Example Build') {
             agent { docker 'maven:3.8.1-adoptopenjdk-11' }
             steps {
