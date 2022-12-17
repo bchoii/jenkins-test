@@ -1,7 +1,8 @@
 pipeline {
-    agent any
+    agent none
     stages {
         stage('Build') {
+            agent any
             steps {
                 sh 'echo "Hello World"'
                 sh '''
@@ -11,6 +12,7 @@ pipeline {
             }
         }
         stage('Test') {
+            agent any
             steps {
                 sh 'echo "Fail!"; exit 1'
             }
